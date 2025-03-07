@@ -8,13 +8,13 @@
         int N = 144;
         char Frase[] = "Não temos mais feriado em Março!!!";
 
-        fp = fopen("saida.txt", "w");
+        fp = fopen("saida.txt", "r");  //r: (read) leitura
         if (fp == NULL){
             printf("ERRO: o arquivo não pode ser aberto!\n");
             exit(ERRO);
         }
         
-        fprintf(fp, "%d %*[^\n]", &N, Frase);
+        fprintf(fp, "%d %*[^\n]", &N, Frase); //Lê até enontrar o \n-
         printf("O nbúmero pe %d e a frase é %s\n", N, Frase);
 
 

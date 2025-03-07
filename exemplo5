@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define ERRO 1
+
+    int main(){
+        
+        FILE *fp;
+        int N = 144;
+        char Frase[] = "Não temos mais feriado em Março!!!";
+
+        fp = fopen("saida.txt", "w");
+        if (fp == NULL){
+            printf("ERRO: o arquivo não pode ser aberto!\n");
+            exit(ERRO);
+        }
+        
+        fprintf(fp, "%d %*[^\n]", &N, Frase);
+        printf("O nbúmero pe %d e a frase é %s\n", N, Frase);
+
+
+        fclose(fp);
+        return 0;
+
+    }
+
+
